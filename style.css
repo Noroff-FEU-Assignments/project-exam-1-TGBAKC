@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+header{
+
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+     padding: 0;
+    justify-content: flex-end;
+   overflow: hidden;
+
+}
+.logo{
+       font-size: 2rem;
+      font-family: 'Satisfy', cursive;
+      margin: auto;
+      margin-left: 20px;
+      color: orange;
+      font-weight: lighter;
+    
+}
+
+ul li{
+    margin: 2rem;
+    font-size: 1rem;
+  
+}
+.navbar a{
+    text-decoration: none;
+    color: black;
+}
+span{
+    display: flex;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+hr{
+    opacity: 0.4;
+}
+li img{
+    width: 15px;
+    opacity: 0.4;
+}
+.main-menu img{
+    width: 100%;
+}
+
+.latest-posts-carousel {
+    width: 100%; /* Karusel genişliği */
+    margin: 0 auto; /* Ortalamak için */
+    overflow: hidden; /* Taşan içerikleri gizlemek için */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-container {
+    display: flex; /* İçerikleri yan yana sıralamak için */
+    transition: all 0.5s; /* Geçiş efekti için */
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 25%; /* Her slaytın genişliği (örnekte 4 slayt gösteriliyor) */
+    background-color: #D9E7F4;
+  
+   
+  }
+ 
+  .carousel-slide img{
+    width: 15em;
+    height: auto;
+    padding: 10px;
+    width: 21em;
+    height: 15em;
+  }
+  .prev-slide,
+  .next-slide {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+  }
+  
+  .prev-slide {
+    left: 0;
+  }
+  
+  .next-slide {
+    right: 0;
+  }
+  
+  .carousel__heading{
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 20px;
+  }
