@@ -4,9 +4,7 @@
     box-sizing: border-box;
 }
 
-header{
 
-}
 .navbar{
     display: flex;
     flex-wrap: wrap;
@@ -70,14 +68,13 @@ li img{
   .carousel-slide {
     display: flex;
     justify-content: center;
-    flex: 0 0 25%; /* Her slaytın genişliği (örnekte 4 slayt gösteriliyor) */
+    flex: 0 0 10%; /* Her slaytın genişliği (örnekte 4 slayt gösteriliyor) */
     background-color: #D9E7F4;
-  
-   
+   position: relative;
   }
  
   .carousel-slide img{
-    width: 15em;
+
     height: auto;
     padding: 10px;
     width: 21em;
@@ -105,4 +102,40 @@ li img{
     font-size: 3rem;
     text-align: center;
     margin-top: 20px;
+    color: rgba(0, 0, 0, 0.482);
+  }
+  .text-on-image {
+font-family: "domaine display";
+    background-color: rgba(184, 130, 12, 0.712);
+    position: absolute;
+    bottom: 0px; /* Metni aşağıda ayarlayın */
+    left: 50%; /* Metni yatayda ortala */
+    transform: translateX(-50%); /* Metni yatayda tam ortala */
+    color: white;
+    padding: 10px; /* İçerik etrafında biraz boşluk bırakın */
+  }
+
+
+  .food-meny{
+    text-align: center;
+    margin-top: 40px;
+    font-weight: bolder;
+  }
+  .foodies{
+    color: rgba(0, 0, 0, 0.406);
+    margin-top: 20px;
+  }
+  .container {
+    display: flex; 
+
+    margin-top: 20px;/* Flexbox kullanarak içeriği yatay olarak hizala */
+  }
+
+  .box1 {
+    margin: 10px; /* Kutular arasında boşluk bırakmak için kenar boşluğu ayarla */
+  }
+
+  .box1 img {
+    max-width: 100%; /* Resmin maksimum genişliği */
+    height: auto; /* Otomatik yükseklik ayarı */
   }
