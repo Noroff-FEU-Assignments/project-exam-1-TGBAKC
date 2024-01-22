@@ -3,7 +3,14 @@
     padding: 0; 
     box-sizing: border-box;
 }
-
+header {
+  background-color: #ffffffdf; /* Header arka plan rengi */
+  padding: 10px 0; /* Header içeriği ile arka plan arasındaki boşluk */
+  position: fixed; /* Header'ı sabit yap */
+  top: 0; /* Sayfanın üst kısmına sabitle */
+  width: 100%; /* Header'ı sayfanın tam genişliği kadar yayın */
+  z-index: 1000; /* Header'ın diğer içeriklerin önünde kalmasını sağlar */
+}
 
 .navbar{
     display: flex;
@@ -12,6 +19,7 @@
      padding: 0;
     justify-content: flex-end;
    overflow: hidden;
+ 
 
 }
 .logo{
@@ -47,6 +55,7 @@ li img{
 }
 .main-menu img{
     width: 100%;
+   height: auto;
 }
 
 .latest-posts-carousel {
@@ -71,6 +80,7 @@ li img{
     flex: 0 0 10%; /* Her slaytın genişliği (örnekte 4 slayt gösteriliyor) */
     background-color: #D9E7F4;
    position: relative;
+   width: 100%;
   }
  
   .carousel-slide img{
@@ -82,7 +92,7 @@ li img{
   }
   .prev-slide,
   .next-slide {
-    background-color: #333;
+    background-color: #333333be;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -126,16 +136,118 @@ font-family: "domaine display";
     margin-top: 20px;
   }
   .container {
-    display: flex; 
-
-    margin-top: 20px;/* Flexbox kullanarak içeriği yatay olarak hizala */
+    display: flex;
+    margin-top: 20px;  içeriği
   }
-
   .box1 {
-    margin: 10px; /* Kutular arasında boşluk bırakmak için kenar boşluğu ayarla */
+    margin: 10px;
+    min-height: 150px;
+    flex: 1; /* Tüm kutuların eşit genişlikte olmasını sağlar */
   }
-
+  
   .box1 img {
     max-width: 100%; /* Resmin maksimum genişliği */
     height: auto; /* Otomatik yükseklik ayarı */
   }
+  .box1 span{
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+  text-decoration: underline;
+  }
+  .site-inner {
+    display: flex;
+    align-items: center;
+    line-height: 40px; 
+    background-color: #33333306;
+    margin: 0px;/* Dikey hizalamayı ortala */
+  }
+ .site-wrapper {
+  flex: 0 0 auto; /* Resmin genişliğini otomatik olarak ayarla, sabit genişlik değil */
+  margin-right: 20px; /* Resim ile metin arasına bir boşluk ekleyin */
+}
+  .site-wrapper img {
+  
+    border-radius: 50%; /* Resmi yuvarlak yapmak için kullanılır */
+    width: 200px; /* İsteğe bağlı olarak resmin genişliğini ayarlayabilirsiniz */
+    height: 200px; /* İsteğe bağlı olarak resmin yüksekliğini ayarlayabilirsiniz */
+    object-fit: cover; 
+    margin-top: 10px;/* Resmin içeriğini orantılı bir şekilde doldurur */
+  }
+ p{
+   
+      flex: 1; /* Metin, boşluğu doldurmak için genişliği doldurur */
+  
+  }
+a.little-info{
+  font-family: 'Pacifico', cursive;
+  margin: 5px;
+}
+ /* Footer genel stil */
+footer {
+ background-color: #F9D8CB;
+  color: #fff;
+  padding: 20px 0;
+}
+.footer-container{
+  flex-direction: column;
+}
+/* Footer içeriği düzenleme */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+/* Her bölümü düzenleme */
+.footer-section {
+  flex: 1;
+  text-align: center;
+}
+
+/* Hakkımızda bölümü stil */
+.about h4 {
+  color: black; /* Sarı renk */
+}
+
+.about p {
+  font-style: italic;
+}
+
+/* Bağlantılar bölümü stil */
+.links h4 {
+  color: black;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links li {
+  margin: 5px 0;
+}
+
+.links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Footer alt kısmı stil */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+h4{
+  color: black;
+}
+  
+  
