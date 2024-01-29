@@ -110,9 +110,10 @@ li img{
   
   .carousel__heading{
     font-size: 3rem;
+    font-family: ;
     text-align: center;
     margin-top: 20px;
-    color: rgba(0, 0, 0, 0.482);
+    color: #f49782;
   }
   .text-on-image {
 font-family: "domaine display";
@@ -250,4 +251,105 @@ h4{
   color: black;
 }
   
+((((((((((((contact page))))))))))))
+
+.contact-page {
+  font-family: Arial, sans-serif;
+  background-color: #F49782;
+  padding: 10px;
+  margin: 0;
+
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
   
+}
+.contact-title{
+  background: url(images/titlebg.png) repeat-x left center;
+background-repeat: repeat;
+  font-family:sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #58595B;
+  font-size: 1.2rem;
+  line-height: 19px;
+  margin-top: 20px;
+}
+.contact-p{
+  display: flex;
+  color: #58595b;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  margin: 10px;
+  text-transform: lowercase;
+  height: 72px;
+  width: 690px;
+  text-align: center;
+ 
+
+}
+h2 {
+  color: #333;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  color: #F49782;
+  background: white;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contactForm div {
+  margin-bottom: 15px;
+}
+
+#contactForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+ 
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* Makes sure padding doesn't affect overall width */
+}
+
+#contactForm textarea {
+  height: 100px;
+}
+
+#contactForm button {
+  display: flex;
+  justify-content: space-evenly;
+  background-color:#F49782;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#contactForm button:hover {
+  background-color: #004494;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+}
+
+

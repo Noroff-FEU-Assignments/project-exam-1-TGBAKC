@@ -30,3 +30,49 @@ document.addEventListener("DOMContentLoaded", function() {
     showSlides();
   });
   
+
+
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevents form submission until validation is complete
+
+        let isValid = true;
+        let errorMessage = '';
+
+        // Validate Name
+        let name = document.getElementById('name').value;
+        if (name.length < 5) {
+            errorMessage = 'Name should be more than 5 characters long';
+            document.getElementById('errorName').innerText = errorMessage;
+            isValid = false;
+        } else {
+            document.getElementById('errorName').innerText = '';
+        }
+
+        // Validate Email
+        let email = document.getElementById('email').value;
+        if (!email.includes('@') || !email.includes('.')) {
+            errorMessage = 'Please enter a valid email address';
+            document.getElementById('errorEmail').innerText = errorMessage;
+            isValid = false;
+        } else {
+            document.getElementById('errorEmail').innerText = '';
+        }
+
+        // Validate Message
+        let message = document.getElementById('message').value;
+        if (message.length < 25) {
+            errorMessage = 'Message content should be more than 25 characters long';
+            document.getElementById('errorMessage').innerText = errorMessage;
+            isValid = false;
+        } else {
+            document.getElementById('errorMessage').innerText = '';
+        }
+
+        if (isValid) {
+            // If all validations pass, submit the form or handle it as needed
+            console.log("Form is valid. Handling submission...");
+            // Here you can write code to submit the form data using AJAX or any other method
+        }
+    });
+
