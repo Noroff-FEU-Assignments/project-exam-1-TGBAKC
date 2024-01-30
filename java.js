@@ -75,4 +75,5 @@ document.addEventListener("DOMContentLoaded", function() {
             // Here you can write code to submit the form data using AJAX or any other method
         }
     });
-
+   
+    

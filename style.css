@@ -353,3 +353,46 @@ h2 {
 }
 
 
+
+---------blog-----
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Eğer birden fazla column varsa, satırlar arası geçiş sağlar */
+  justify-content: space-between; 
+  /* Sütunlar arası eşit boşluk bırakır */
+
+}
+
+.column {
+  display: flex; /* İçeriği yatay olarak hizalar */
+  align-items: center; /* İçerikleri dikey olarak ortalar */
+  border: 2px solid red; /* Görsellik için kenarlık ekledim, isteğe bağlı */
+  margin: 10px; /* Sütunlar arası boşluk */
+  max-width: 600px; /* Maksimum genişlik sınırlaması */
+
+  margin: auto ;
+}
+
+.column img {
+  padding: 10px;
+  width: 207px; /* Resim genişliği */
+  height: 207px; /* Resim yüksekliği */
+  max-width: 100%;
+  margin-right: 20px; /* Resim ve metin arasında boşluk */
+}
+
+.content-text {
+font-family: Arial, Helvetica, sans-serif;
+  flex-grow: 1; /* Metin bölümünün kalan alanı doldurmasını sağlar */
+}
+
+.content-text a{
+  font-size: 19px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  text-decoration: none solid rgb(109,110,113);
+  color: #6D6E71;
+  height: auto;
+  width: auto;
+
+}
