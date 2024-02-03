@@ -6,10 +6,8 @@
 header {
   background-color: #ffffffdf; /* Header arka plan rengi */
   padding: 10px 0; /* Header içeriği ile arka plan arasındaki boşluk */
-  position: fixed; /* Header'ı sabit yap */
-  top: 0; /* Sayfanın üst kısmına sabitle */
   width: 100%; /* Header'ı sayfanın tam genişliği kadar yayın */
-  z-index: 1000; /* Header'ın diğer içeriklerin önünde kalmasını sağlar */
+ /
 }
 
 .navbar{
@@ -354,6 +352,20 @@ h2 {
 
 
 
+
+
+
+
+
+
+
+.blog-body{
+  background-color: #f4978212;
+}
+
+.card h2{
+  font-size: 19px;
+}
 .date{
   display: flex;
   justify-content: center;
@@ -366,6 +378,7 @@ h2 {
   background-size: 95px 25px;
   line-height: 25px;
   word-spacing: 0px;
+  width: 60px;
   margin: 7rem;
   text-align: center;
 }
@@ -461,18 +474,52 @@ main article{
 
 main .card img{
   width: 100%;
-  width: 207px;
+
+
   height: 207px;
 }
 
-.read-more{
-  margin:1rem;
-  background-image:url(images/readmore.png);
-
- 
-
+.read-more {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Dikey olarak ortalar */
+  height: 29px; /* Arka plan resmi yüksekliği */
+  width: 120px; /* Arka plan resmi genişliği */
+  background-image: url('./images/readmore.png');
+  background-repeat: no-repeat;
+  background-size: cover; /* Resmi tam sığdırmak için */
+  margin: 2rem auto; /* Otomatik yatay marj ile sayfanın ortasına yerleştir */
+  text-align: center;
 }
 
+.read-more a {
+  color: #ffffff; /* Bağlantı rengi, görünürlüğü artırır */
+  text-decoration: none; /* Alt çizgiyi kaldır */
+}
+
+
+
+
+.next {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./images/date-background.png);
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 100px;
+ margin: 2rem;
+ font-size: 14px;
+}
+.next a{
+  color:#f49782;
+font-weight: 700;
+text-decoration: none;
+}
+.next a:hover{
+  color: #58595B;
+}
 @media screen and (max-width:700px) {
  
   main .card{
