@@ -3,56 +3,160 @@
     padding: 0; 
     box-sizing: border-box;
 }
-header {
-  background-color: #ffffffdf; /* Header arka plan rengi */
-  padding: 10px 0; /* Header içeriği ile arka plan arasındaki boşluk */
-  width: 100%; /* Header'ı sayfanın tam genişliği kadar yayın */
- /
-}
 
-.navbar{
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-     padding: 0;
-    justify-content: flex-end;
-   overflow: hidden;
- 
+.navbar {
+  font-size: 18px;
+  background-color: #d9e7f45e;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0;
+  display: flex;
+
 
 }
-.logo{
-       font-size: 2rem;
-      font-family: 'Satisfy', cursive;
-      margin: auto;
-      margin-left: 20px;
-      color: orange;
-      font-weight: lighter;
-    
+
+.main-nav {
+  list-style-type: none;
+  display: none;
 }
 
-ul li{
-    margin: 2rem;
-    font-size: 1rem;
+.nav-links,
+.logo {
+  text-decoration: none;
+  color: #58595b;
+}
+
+.main-nav li {
+  text-align: center;
+  margin: 15px auto;
+
+}
+
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Seaweed Script', cursive;color: #f49782;
+  margin: 0.5rem;
+  font-size: 24px;
+}
+
+
+.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+}
+.main-nav {
+  display: none;
+  /* Diğer gerekli stiller */
+}
+
+.main-nav.active {
+  display: block;
+}
+
+/* Styles based on screen size */
+@media screen and (max-width: 767px) {
+
+  .navbar,
+  .main-nav,
+  .main-nav li {
+      padding-bottom: 0;
+      display: block;
+  }
+
+  .navbar {
+      height: auto;
+      display: flex;
+      align-items: center;
+  }
+
+  .main-nav {
+      background-color: #2376ae;
+      text-align: center;
+      position: absolute;
+      top: 38px;
+      left: 0;
+      margin: 0;
+      width: 100%;
+      z-index: 1;
+      box-sizing: border-box;
+  }
+  .navbar-toggle{
+    display: block;
+
+  }
   
+  .nav-links {
+      margin: 10px 0;
+      color: black;
+      display: block;
+
+
+  }
+
+  .navbar-toggle {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+      color: black;
+      font-size: 24px;
+      z-index: 2;
+  }
+
+
+
 }
-.navbar a{
-    text-decoration: none;
-    color: black;
+
+@media screen and (min-width: 768px) {
+  .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 0;
+      height: 70px;
+      align-items: center;
+  }
+
+  .main-nav {
+      display: flex;
+      margin-right: 30px;
+      flex-direction: row;
+      justify-content: flex-end;
+      background-color: transparent;
+      position: static;
+  }
+
+  .main-nav li {
+      margin: 0;
+  }
+
+  .nav-links {
+      margin-left: 40px;
+  }
+
+  .logo {
+      margin-top: 0;
+  }
+
+  .navbar-toggle {
+      display: none;
+  }
+
+  .logo:hover,
+  .nav-links:hover {
+      color: rgba(255, 255, 255, 1);
+  }
 }
-span{
-    display: flex;
-    justify-content: center;
-    font-size: 0.75rem;
-}
-hr{
-    opacity: 0.4;
-}
-li img{
-    width: 15px;
-    opacity: 0.4;
-}
+
+
 .main-menu img{
-    width: 100%;
+   width: 100%;
    height: auto;
 }
 
@@ -113,6 +217,10 @@ li img{
     margin-top: 20px;
     color: #f49782;
   }
+
+
+
+  
   .text-on-image {
 font-family: "domaine display";
     background-color: rgba(184, 130, 12, 0.712);
@@ -122,6 +230,36 @@ font-family: "domaine display";
     transform: translateX(-50%); /* Metni yatayda tam ortala */
     color: white;
     padding: 10px; /* İçerik etrafında biraz boşluk bırakın */
+  }
+  @media screen and (max-width: 767px) {
+.carousel-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+gap: 10px;
+}
+.ca
+.prev-slide,
+.next-slide{
+display: none;
+}
+.carousel-slide img{
+ width: 40em;
+ height: auto;
+}
+.container{
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.navbar-toggle {
+  display: block;
+}
+
+.main-nav {
+  display: none;
+}
+
   }
 
 
@@ -174,14 +312,14 @@ font-family: "domaine display";
   }
  p{
    
-      flex: 1; /* Metin, boşluğu doldurmak için genişliği doldurur */
+      flex: 1; 
   
   }
 a.little-info{
   font-family: 'Pacifico', cursive;
   margin: 5px;
 }
- /* Footer genel stil */
+ /* Footer general design */
 footer {
  background-color: #F9D8CB;
   color: #fff;
@@ -190,7 +328,7 @@ footer {
 .footer-container{
   flex-direction: column;
 }
-/* Footer içeriği düzenleme */
+/* Footer content */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -204,7 +342,7 @@ footer {
   text-align: center;
 }
 
-/* Hakkımızda bölümü stil */
+/* About*/
 .about h4 {
   color: black; /* Sarı renk */
 }
@@ -213,7 +351,7 @@ footer {
   font-style: italic;
 }
 
-/* Bağlantılar bölümü stil */
+/* Links */
 .links h4 {
   color: black;
 }
@@ -238,7 +376,7 @@ footer {
 
 
 
-/* Footer alt kısmı stil */
+/* Footer */
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
@@ -248,8 +386,10 @@ footer {
 h4{
   color: black;
 }
-  
-((((((((((((contact page))))))))))))
+
+
+
+ /* Contact-page loading */
 
 .contact-page {
   font-family: Arial, sans-serif;
@@ -322,7 +462,7 @@ h2 {
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  box-sizing: border-box; /* Makes sure padding doesn't affect overall width */
+  box-sizing: border-box; 
 }
 
 #contactForm textarea {
@@ -357,6 +497,7 @@ h2 {
 
 
 
+/* blog-spesific-page loading */
 
 
 .blog-body{
@@ -418,7 +559,7 @@ h2 {
   flex-direction: column;
   align-items: center; /* Keeps items aligned vertically in the center */
   text-align: center; /* Centers the text inside the container elements */
-  padding: 20px;
+
 }
 
 .preview p {
@@ -497,7 +638,10 @@ main .card img{
   text-decoration: none; /* Alt çizgiyi kaldır */
 }
 
-
+.read-more:hover{
+  color: #F49782;
+  cursor: pointer;
+}
 
 
 .next {
@@ -521,7 +665,10 @@ text-decoration: none;
   color: #58595B;
 }
 @media screen and (max-width:700px) {
- 
+  main{
+    flex-direction: column;
+
+  }
   main .card{
       flex-direction: column;
   }
@@ -529,3 +676,40 @@ text-decoration: none;
       flex-direction: column;
   }
 }
+
+
+/* Bu bir CSS yorumudur */
+/* Bu bir CSS yorumudur */
+/* Bu bir CSS yorumudur */
+/* Bu bir CSS yorumudur */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
