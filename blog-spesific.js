@@ -1,41 +1,54 @@
+const baseUrl = "https://akca.no/wp-json/wp/v2/posts?per_page=6&_embed";
+let currentPage = 1;
+const resultsContainer = document.querySelector(".posts");
+const loadMore = document.querySelector(".load-more");
+const errorMessage = document.querySelector(".error-message");
 
-const urlBase = "https://healtylife.akca.no/wp-json/wp/v2/posts/";
-
-const productDetailsContainer = document.getElementById('productDetails');
-
-function fetchAndDisplayProductDetails() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
-
-    if (productId) {
-        // URL'yi dinamik olarak oluştur
-        const fetchUrl = `${urlBase}${productId}?_embed`;
-
-        fetch(fetchUrl)
-            .then(response => response.json())
-            .then(product => {
-                renderProduct(product); // Doğru fonksiyonu çağır
-            })
-            .catch(error => {
-                productDetailsContainer.innerHTML = `<p>Error loading product details.</p>`;
-                console.error('Error fetching product details:', error);
-            });
-    } else {
-        productDetailsContainer.innerHTML = `<p>Product ID not specified.</p>`;
+async function getPosts() {
+    try {
+        const response = await fetch(`${baseUrl}&page=${currentPage}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok.');
+        }
+        const posts = await response.json();
+        if (posts.length < 1) {
+            loadMore.style.display = "none";
+            if (currentPage === 1) {
+                errorMessage.innerHTML = "No posts found.";
+            }
+            return;
+        }
+        createHtmlPosts(posts);
+    } catch (error) {
+        errorMessage.innerHTML = `Error loading posts: ${error.message}`;
     }
 }
 
-function renderProduct(product) {
-    // Ürün detaylarını doğru şekilde göster
-    const htmlContent = `
-      <h1>${product.title.rendered}</h1>
-      <p>Published: ${product.date}</p>
-      <p>Last Modified: ${product.modified}</p>
-      <img src="${product.featured_media_src_url}" alt="${product.title.rendered}" style="width:273px;">
-      <div>${product.content.rendered}</div>
-    `;
-
-    productDetailsContainer.innerHTML = htmlContent;
+function createHtmlPosts(posts) {
+    let postsHtml = '';
+    posts.forEach(post => {
+        const imgUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'default-image.jpg';
+        postsHtml += `
+            <section class="card">
+                <article>
+                    <h2>${post.title.rendered}</h2>
+                    <p>${post.excerpt.rendered}</p>
+                    <div class="read-more">
+                        <a href="blog-specific-page.html?id=${post.id}">Read More</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="${imgUrl}" alt="${post.title.rendered}">
+                </article>
+            </section>
+        `;
+    });
+    resultsContainer.innerHTML += postsHtml;
 }
 
-document.addEventListener('DOMContentLoaded', fetchAndDisplayProductDetails);
+loadMore.addEventListener('click', () => {
+    currentPage++;
+    getPosts();
+});
+
+getPosts();

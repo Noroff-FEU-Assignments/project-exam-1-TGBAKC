@@ -5,17 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
-<body class="contact-page">
+<header>
+    <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href="#" class="logo">
+         Tugba Akca Nutrition <span>healthy life</span>
+        </a>
+        <ul class="main-nav" id="js-menu">
+            <li>
+                <a href="index.html" class="nav-links">Home</a>
+            </li>
+            <li>
+                <a href="blog.html" class="nav-links">Blog</a>
+            </li>
+            <li>
+                <a href="about-page.html" class="nav-links">About</a>
+            </li>
+            <li>
+                <a href="contact-page.html" class="nav-links">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+    <hr>
+
+<body>
     <div class="content">
-    <h1 class="contact-title">GET IN TOUCH</h1>
+    <h1 class="contact-title">CONTACT FORM</h1>
     <p class="contact-p">
         I would love to hear from you! Please feel free to contact me directly at hello@eatyourselfskinny.com OR fill out the form below should you have any questions, want additional recipes or would like to make a request!  I love hearing from my readers!
     </p>
 </div>
     <form id="contactForm">
-     
+  
         <div>
 <label for="name">Name</label>
 <input type="text" id="name" name="name">
@@ -27,6 +52,14 @@
     <input type="email" id="email" name="email">
     <span class="error" id="errorEmail"></span>
 </div>
+
+
+<div>
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" minlength="15" title="Subject should be more than 15 characters long">
+    <span class="error" id="errorSubject"></span>
+</div>
+
 <div>
     <label for="message">Message:</label>
     <textarea id="message" name="message"></textarea>
@@ -34,6 +67,33 @@
 </div>
 <button type="submit">Submit</button>
     </form>
+
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-content">
+            <div class="footer-section about">
+              <h4>About Us</h4>
+              <p>Your source for delicious recipes and culinary inspiration.</p>
+            </div>
+            <div class="footer-section links">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Recipes</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-section search">
+              <h4>Recipe Search</h4>
+              <form action="/search" method="GET">
+                <input type="text" name="q" placeholder="Search for recipes...">
+                <button type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </footer>
     <script src="java.js"></script>
 </body>
 </html>

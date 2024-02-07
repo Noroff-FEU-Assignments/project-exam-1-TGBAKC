@@ -11,7 +11,6 @@
   padding: 0;
   display: flex;
 
-
 }
 
 .main-nav {
@@ -30,9 +29,11 @@
   margin: 15px auto;
 
 }
+a.nav-links:hover{
+  color: #F49782;
+}
 
-
-.logo {
+.logo  {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -172,25 +173,31 @@
   .carousel-container {
     display: flex; /* İçerikleri yan yana sıralamak için */
     transition: all 0.5s; /* Geçiş efekti için */
-    max-width: 100%;
-    overflow: hidden;
-  }
-  
-  .carousel-slide {
+    width: 400%; /* 4 slaytı barındıracak şekilde genişlet */
+    background-color:#f4978232;
+}
+
+.carousel-slide {
+    width: 25%; /* Karuselde daima 4 slayt göster */
+    flex-shrink: 1; /* Slaytların boyutunun ekran genişliğine göre küçülmemesi */
     display: flex;
+   margin: 1rem;
     justify-content: center;
-    flex: 0 0 10%; /* Her slaytın genişliği (örnekte 4 slayt gösteriliyor) */
-    background-color: #D9E7F4;
-   position: relative;
-   width: 100%;
-  }
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.5); 
+ 
+}
+
  
   .carousel-slide img{
-
+    border-radius:10px;
     height: auto;
-    padding: 10px;
-    width: 21em;
-    height: 15em;
+    width: 18em;
+    transition: transform 0.3s ease;
+  }
+  .carousel-slide img:hover{
+    transform: scale(1.1); 
   }
   .prev-slide,
   .next-slide {
@@ -232,35 +239,14 @@ font-family: "domaine display";
     padding: 10px; /* İçerik etrafında biraz boşluk bırakın */
   }
   @media screen and (max-width: 767px) {
-.carousel-container{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-gap: 10px;
-}
-.ca
-.prev-slide,
-.next-slide{
-display: none;
-}
-.carousel-slide img{
- width: 40em;
- height: auto;
-}
-.container{
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.navbar-toggle {
-  display: block;
-}
-
-.main-nav {
-  display: none;
-}
-
+    .carousel-slide img{
+    flex: 1;
+    margin: auto;
+    }
   }
+  
+  
+ 
 
 
   .food-meny{
@@ -272,7 +258,7 @@ display: none;
     color: rgba(0, 0, 0, 0.406);
     margin-top: 20px;
   }
-  .container {
+  .box-container {
     display: flex;
     margin-top: 20px;  içeriği
   }
@@ -285,11 +271,26 @@ display: none;
   .box1 img {
     max-width: 100%; /* Resmin maksimum genişliği */
     height: auto; /* Otomatik yükseklik ayarı */
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Pürüzsüz geçiş efekti */
   }
+  
+  .box1 img:hover {
+    transform: scale(1.1); /* Resmi %10 büyüt */
+  }
+  
   .box1 span{
-    font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
   text-decoration: underline;
+ display: flex;
+ text-align: center;
+ justify-content: center;
+ cursor: pointer;
+ margin: 2rem;
+  }
+  .box1 span:hover{
+    color:#f49782;
   }
   .site-inner {
     display: flex;
@@ -390,25 +391,20 @@ h4{
 
 
  /* Contact-page loading */
+ 
 
-.contact-page {
-  font-family: Arial, sans-serif;
-  background-color: #F49782;
-  padding: 10px;
-  margin: 0;
-
-}
-.content{
+.content {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
-  
+  margin: 2rem;
 }
-.contact-title{
+
+.contact-title {
   background: url(images/titlebg.png) repeat-x left center;
-background-repeat: repeat;
-  font-family:sans-serif;
+  background-repeat: repeat;
+  font-family: sans-serif;
   letter-spacing: 2px;
   text-align: center;
   color: #58595B;
@@ -416,7 +412,8 @@ background-repeat: repeat;
   line-height: 19px;
   margin-top: 20px;
 }
-.contact-p{
+
+.contact-p {
   display: flex;
   color: #58595b;
   font-size: 0.9rem;
@@ -426,9 +423,8 @@ background-repeat: repeat;
   height: 72px;
   width: 690px;
   text-align: center;
- 
-
 }
+
 h2 {
   color: #333;
 }
@@ -457,12 +453,11 @@ h2 {
 #contactForm input[type="text"],
 #contactForm input[type="email"],
 #contactForm textarea {
- 
   width: 100%;
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 #contactForm textarea {
@@ -470,9 +465,7 @@ h2 {
 }
 
 #contactForm button {
-  display: flex;
-  justify-content: space-evenly;
-  background-color:#F49782;
+  background-color: #F49782;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -490,8 +483,30 @@ h2 {
   font-size: 0.875rem;
 }
 
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .contact-p, #contactForm {
+    width: 90%; /* Form ve paragraf genişliğini azalt */
+    height: auto; /* Yüksekliği otomatik ayarla */
+  }
 
+  #contactForm button {
+    justify-content: center; /* Buton içeriğini merkezle */
+  }
+}
 
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 1rem; /* Başlık font boyutunu küçült */
+    margin-top: 10px;
+  }
+
+  .contact-p {
+    font-size: 0.8rem; /* Paragraf font boyutunu küçült */
+    margin: 5px;
+    height: auto; /* Yüksekliği otomatik ayarla */
+  }
+}
 
 
 
@@ -682,6 +697,72 @@ text-decoration: none;
 /* Bu bir CSS yorumudur */
 /* Bu bir CSS yorumudur */
 /* Bu bir CSS yorumudur */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px; /* Her iki yandan da 8px negatif marj ile öğeler arasındaki boşluğu dengeler */
+}
+
+.column {
+  flex: 1; /* Flex öğeleri eşit olarak doldurur */
+  max-width: 33.3%; /* Öğelerin maksimum genişliği */
+  padding: 0 8px; /* Her bir öğe arasında boşluk bırakır */
+  margin-bottom: 16px; /* Alt marj */
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #F9D8CB;
+  color: white;
+}
+.about-section h1{
+  color: #333;
+}
+.container {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Flexbox ile temizleme ihtiyacı kalmadı, bu yüzden bu kısım çıkarıldı */
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+ margin: 1rem auto;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .row{
+    flex-wrap: wrap;
+  }
+  .column {
+  
+    max-width: 100%; /* Küçük ekranlarda sütunlar tam genişliğe ayarlanır */
+  }
+}
 
 
 
