@@ -101,15 +101,20 @@ if (subject.length <= 15) { // Subject 15 karakter veya daha kısa ise
         }
     });
    
+    navBarToggle.addEventListener('click', function () {
+        isMenuOpen = !isMenuOpen;
+        console.log("Menu State:", isMenuOpen); // Check the toggle state
+    
+        if (isMenuOpen) {
+            mainNav.classList.add('active');
+        } else {
+            mainNav.classList.remove('active');
+        }
+    });
     document.addEventListener('DOMContentLoaded', function () {
-      const navbarToggle = document.getElementById('js-navbar-toggle');
-      const menu = document.getElementById('js-menu');
-  
-      navbarToggle.addEventListener('click', function () {
-          menu.classList.toggle('active');
-      });
-  });
-  
-
-
-  
+        mainNav.classList.remove('active'); // Ensure menu is hidden on load
+    
+        // Rest of your code...
+    });
+    
+    
