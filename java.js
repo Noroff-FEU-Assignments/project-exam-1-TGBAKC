@@ -1,54 +1,48 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const carouselContainer = document.querySelector(".carousel-container");
-  const slides = Array.from(document.querySelectorAll(".carousel-slide"));
-  const slideWidth = slides[0].offsetWidth;
-  let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', function () {
+    const carouselContainer = document.querySelector('.carousel-container');
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    const prevButton = document.querySelector('.prev-slide');
+    const nextButton = document.querySelector('.next-slide');
 
-  // Slaytların klonlarını oluştur ve karusel konteynerine ekle
-  const firstClone = slides[0].cloneNode(true);
-  const lastClone = slides[slides.length - 1].cloneNode(true);
-  carouselContainer.append(firstClone);
-  carouselContainer.prepend(lastClone);
+    // Calculate total width of carousel
+    let totalWidth = 0;
+    carouselSlides.forEach(slide => {
+        totalWidth += slide.offsetWidth;
+    });
 
-  // Karuseli başlangıç pozisyonuna ayarla
-  carouselContainer.style.transform = `translateX(${-slideWidth}px)`;
+    // Set width of carousel container
+    carouselContainer.style.width = totalWidth + 'px';
 
-  function moveCarousel(newIndex) {
-      // Döngüsel hareket için indeksi güncelle
-      currentIndex = newIndex;
-      if(newIndex >= slides.length) {
-          currentIndex = 0;
-          carouselContainer.style.transition = "none";
-          carouselContainer.style.transform = `translateX(${-(currentIndex + 1) * slideWidth}px)`;
-          setTimeout(() => {
-              carouselContainer.style.transition = "transform 0.3s ease-out";
-              moveCarousel(currentIndex);
-          }, 0);
-      } else if(newIndex < 0) {
-          currentIndex = slides.length - 1;
-          carouselContainer.style.transition = "none";
-          carouselContainer.style.transform = `translateX(${-(currentIndex + 1) * slideWidth}px)`;
-          setTimeout(() => {
-              carouselContainer.style.transition = "transform 0.3s ease-out";
-              moveCarousel(currentIndex);
-          }, 0);
-      } else {
-          carouselContainer.style.transition = "transform 0.3s ease-out";
-          carouselContainer.style.transform = `translateX(${-(currentIndex + 1) * slideWidth}px)`;
-      }
-  }
+    // Function to move carousel to the left
+    function moveCarouselLeft() {
+        const lastSlide = carouselContainer.lastElementChild;
+        carouselContainer.insertBefore(lastSlide, carouselContainer.firstElementChild);
+        carouselContainer.style.transition = 'transform 0s'; // Disable transition
+        carouselContainer.style.transform = 'translateX(' + (-lastSlide.offsetWidth) + 'px)';
+        setTimeout(() => {
+            carouselContainer.style.transition = 'transform 0.5s ease'; // Re-enable transition
+            carouselContainer.style.transform = 'translateX(0)';
+        }, 50); // Delay to ensure transition is re-enabled
+    }
 
-  document.querySelector(".next-slide").addEventListener("click", () => {
-      moveCarousel(currentIndex + 1);
-  });
+    // Function to move carousel to the right
+    function moveCarouselRight() {
+        const firstSlide = carouselContainer.firstElementChild;
+        carouselContainer.appendChild(firstSlide);
+        carouselContainer.style.transition = 'transform 0s'; // Disable transition
+        carouselContainer.style.transform = 'translateX(' + firstSlide.offsetWidth + 'px)';
+        setTimeout(() => {
+            carouselContainer.style.transition = 'transform 0.5s ease'; // Re-enable transition
+            carouselContainer.style.transform = 'translateX(0)';
+        }, 50); // Delay to ensure transition is re-enabled
+    }
 
-  document.querySelector(".prev-slide").addEventListener("click", () => {
-      moveCarousel(currentIndex - 1);
-  });
+    // Event listeners for previous and next buttons
+    prevButton.addEventListener('click', moveCarouselLeft);
+    nextButton.addEventListener('click', moveCarouselRight);
 });
 
-
-
+    // Form validation
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevents form submission until validation is complete
 
@@ -74,15 +68,16 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             document.getElementById('errorEmail').innerText = '';
         }
-// Validate Subject
-let subject = document.getElementById('subject').value;
-if (subject.length <= 15) { // Subject 15 karakter veya daha kısa ise
-    errorMessage = 'Subject should be more than 15 characters long';
-    document.getElementById('errorSubject').innerText = errorMessage; // Hata mesajını göster
-    isValid = false;
-} else {
-    document.getElementById('errorSubject').innerText = ''; // Hata mesajını temizle
-}
+
+        // Validate Subject
+        let subject = document.getElementById('subject').value;
+        if (subject.length <= 15) { // Subject 15 karakter veya daha kısa ise
+            errorMessage = 'Subject should be more than 15 characters long';
+            document.getElementById('errorSubject').innerText = errorMessage; // Hata mesajını göster
+            isValid = false;
+        } else {
+            document.getElementById('errorSubject').innerText = ''; // Hata mesajını temizle
+        }
 
         // Validate Message
         let message = document.getElementById('message').value;
@@ -100,21 +95,13 @@ if (subject.length <= 15) { // Subject 15 karakter veya daha kısa ise
             // Here you can write code to submit the form data using AJAX or any other method
         }
     });
-   
-    navBarToggle.addEventListener('click', function () {
-        isMenuOpen = !isMenuOpen;
-        console.log("Menu State:", isMenuOpen); // Check the toggle state
-    
-        if (isMenuOpen) {
-            mainNav.classList.add('active');
-        } else {
-            mainNav.classList.remove('active');
-        }
-    });
-    document.addEventListener('DOMContentLoaded', function () {
-        mainNav.classList.remove('active'); // Ensure menu is hidden on load
-    
-        // Rest of your code...
-    });
-    
-    
+   /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+  
