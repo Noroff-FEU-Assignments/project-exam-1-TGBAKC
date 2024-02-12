@@ -63,7 +63,7 @@
 }
 
 .main-menu img {
-  max-width: 100%; /* Resmin maksimum genişliği, taşmaması için */
+  width: 100%; /* Resmin maksimum genişliği, taşmaması için */
   height: auto; /* Yüksekliği otomatik olarak ayarla */
 }
 
@@ -475,200 +475,92 @@ h2 {
 
 /* blog-spesific-page loading */
 
-
-.blog-body{
-  background-color: #f4978212;
-}
-
-.card h2{
-  font-size: 19px;
-}
-.date{
-  display: flex;
-  justify-content: center;
-  color: #f49782;
-  font-size: 11px;
-  font-weight: 700;
-  background-image: url(images/date-background.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 95px 25px;
-  line-height: 25px;
-  word-spacing: 0px;
-  width: 60px;
-  margin: 7rem;
-  text-align: center;
-}
-.blog-title{
-  display: flex;
-  justify-content: center;
-  font-size: 19px;
-  letter-spacing: 1px;
-  line-height: 24px;
-  background-image: url(./images/titlebg.png);
-  background-repeat: repeat-x;
-  background-position: 0% 50%;
-  width: 690px;
-  height: 40px;
-  margin: 0 0 10px 0;
-  padding: 0 0 15px 0;
-  text-decoration: none solid rgb(88,89,91);
-  text-align: center;
-  color: #58595B;
-  text-transform: uppercase;
-}
-
- 
-.preview img{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: auto;
-  width: 690px;
-  height: 690px;
-  max-width: 100%;
-  box-shadow: 0 0 10px;
- 
-}
-.preview {
+article {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Keeps items aligned vertically in the center */
-  text-align: center; /* Centers the text inside the container elements */
-
-}
-
-.preview p {
-
-  width: 690px; /* Fixed width */
-  height: 96px;
-  font-size: 14px;
-  line-height: 24px;
-  padding: 15px 0; /* Vertical padding */
-  margin: 0 auto; /* Centers the block horizontally */
-  box-sizing: border-box; /* Ensures padding doesn't affect the total width */
-}
-.preview a{
-  background-image: url(images/date-background.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  line-height: 42px;
-  color: #F49782;
-  cursor: pointer;
-
-}
-main{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-main .card{
-  display: flex;
-
-  padding: 1rem;
-
-  gap: 1rem;
-  border: 20px;
-  box-shadow: 0 0 10px;
-  margin: 2rem 0;
-  width: 690px;
- height: auto;
- 
-
-}
-
-main .card:nth-child(even){
-  flex-direction: row-reverse;
-}
-
-
-
-main article{
-  flex: 1;
-
-}
-
-main .card img{
-  width: 100%;
-
-
-  height: 207px;
-}
-
-.read-more {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Dikey olarak ortalar */
-  height: 29px; /* Arka plan resmi yüksekliği */
-  width: 120px; /* Arka plan resmi genişliği */
-  background-image: url('./images/readmore.png');
-  background-repeat: no-repeat;
-  background-size: cover; /* Resmi tam sığdırmak için */
-  margin: 2rem auto; /* Otomatik yatay marj ile sayfanın ortasına yerleştir */
-  text-align: center;
-}
-
-.read-more a {
-  color: #ffffff; /* Bağlantı rengi, görünürlüğü artırır */
-  text-decoration: none; /* Alt çizgiyi kaldır */
-}
-
-.read-more:hover{
-  color: #F49782;
-  cursor: pointer;
-}
-
-
-.next {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  background-image: url(./images/date-background.png);
-  background-repeat: no-repeat;
-  height: 50px;
-  width: 100px;
- margin: 2rem;
- font-size: 14px;
-}
-.next a{
-  color:#f49782;
-font-weight: 700;
-text-decoration: none;
-}
-.next a:hover{
-  color: #58595B;
-}
-@media screen and (max-width:700px) {
-  main{
-    flex-direction: column;
-
-  }
-  main .card{
-      flex-direction: column;
-  }
-  main .card:nth-child(even){
-      flex-direction: column;
-  }
-}
-
-
-/* Bu bir CSS yorumudur */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -8px; /* Her iki yandan da 8px negatif marj ile öğeler arasındaki boşluğu dengeler */
-}
-
-.column {
-  flex: 1; /* Flex öğeleri eşit olarak doldurur */
-  max-width: 33.3%; /* Öğelerin maksimum genişliği */
-  padding: 0 8px; /* Her bir öğe arasında boşluk bırakır */
-  margin-bottom: 16px; /* Alt marj */
+  line-height: 40px;
 }
 
 .card {
+  display: flex;
+  flex-direction: column; /* İçerikleri dikey eksende sırala */
+  border-radius: 10px;
+  margin: 1rem auto; /* Sayfanın ortasında olacak şekilde ayarla */
+  box-shadow: 2px 2px 2px 1px rgb(0, 0, 0);
+  width: 60%; /* Card genişliğini ayarla */
+  max-width: 800px; /* Maksimum genişlik sınırı */
+}
+
+.wp-block-heading {
+  text-align: center;
+  margin: 1rem;
+  text-decoration: underline;
+}
+
+h2 {
+  text-align: center;
+  margin: 2rem;
+}
+
+p {
+  text-align: center;
+  line-height: 21px;
+  font-size: 1rem;
+  width: 80%;
+  margin: auto;
+  text-decoration: none solid rgb(49,49,49);
+}
+
+.wp-block-image img {
+  display: block;
+  width: 50vw; 
+  height: 70vh;
+  margin: 2rem auto; 
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border-radius: 5px;
+}
+
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+ 
+}
+ul li{
+  width: 100%;
+
+}
+ol {
+  list-style-position: inside; 
+  width: 80%;
+  margin: auto;
+}
+
+
+
+
+
+
+
+
+/*about-page*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px; 
+}
+
+.column {
+  flex: 1; 
+  max-width: 33.3%; 
+  padding: 0 8px; 
+  margin-bottom: 16px; 
+}
+
+.about-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
 }
@@ -689,7 +581,7 @@ text-decoration: none;
   text-align: center;
 }
 
-/* Flexbox ile temizleme ihtiyacı kalmadı, bu yüzden bu kısım çıkarıldı */
+
 .title {
   color: grey;
 }

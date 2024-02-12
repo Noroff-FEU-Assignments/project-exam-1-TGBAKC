@@ -5,71 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap" rel="stylesheet">
-<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Explora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 </head>
 <body>
   <header>
-    <nav class="navbar">
-        <span class="navbar-toggle" id="js-navbar-toggle">
-            <i class="fas fa-bars"></i>
-        </span>
-        <a href="#" class="logo">
-         Tugba Akca Nutrition <span>healthy life</span>
-        </a>
-        <ul class="main-nav" id="js-menu">
-            <li>
-                <a href="index.html" class="nav-links">Home</a>
-            </li>
-            <li>
-                <a href="blog1.html" class="nav-links">Blog</a>
-            </li>
-            <li>
-                <a href="About-page.html" class="nav-links">About</a>
-            </li>
-            <li>
-                <a href="contact-page.html" class="nav-links">Contact</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="topnav">
+      <a href="#home" class="active">Tugba Akca Nutrition <span>Healthy life</span></a>
+      <div id="myLinks">
+              
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact-page.html">Contact</a>
+        <a href="about-page.html">About</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
 </header>
     <hr> 
     <div id="loadingIndicator" style="display:none;">Loading...</div>
 <div id="productDetails"></div>
 
-         <footer class="footer">
-            <div class="footer-container">
-              <div class="footer-content">
-                <div class="footer-section about">
-                  <h4>About Us</h4>
-                  <p>Your source for delicious recipes and culinary inspiration.</p>
-                </div>
-                <div class="footer-section links">
-                  <h4>Quick Links</h4>
-                  <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Recipes</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                  </ul>
-                </div>
-                <div class="footer-section search">
-                  <h4>Recipe Search</h4>
-                  <form action="/search" method="GET">
-                    <input type="text" name="q" placeholder="Search for recipes...">
-                    <button type="submit">Search</button>
-                  </form>
-                </div>
-              </div>
-            </div>
+<footer class="footer">
+  <div class="footer-container">
+      <section class="footer-section about">
+          <h4>About Us</h4>
+          <p>Your source for delicious recipes and culinary inspiration.</p>
+      </section>
+      <div class="footer-section links">
+          <h4>Quick Links</h4>
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+          </ul>
+      </div>
+      <section class="footer-section search">
+          <h4>Recipe Search</h4>
+          <form action="/search" method="GET">
+              <input type="text" name="q" placeholder="Search for recipes...">
+              <button type="submit">Search</button>
+          </form>
+      </section>
+  </div>
+</footer>
             <script src="blog-spesific.js"></script>
-          </footer>
+            <script src="java.js"></script>
+      
 </body>
 </html>
