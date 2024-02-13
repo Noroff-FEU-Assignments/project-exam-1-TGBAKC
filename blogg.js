@@ -21,21 +21,29 @@ document.addEventListener("DOMContentLoaded", function () {
           loadMoreButton.style.display = "none";
           errorMessage.textContent = "No more posts to load.";
         } else {
-          data.forEach((post) => {
-            const postElement = document.createElement("div");
-            postElement.classList.add("post");
-            console.log("post", post);
-            let imgSrc = post.featured_media;
-            console.log("imgSrc1", imgSrc);
-            addPost(
-              postElement,
-              imgSrc,
-              post.title.rendered,
-              post.excerpt.rendered,
-              post.id
-            );
+          const fetches = data.map(post => {
+            return fetch(`https://akca.no/wp-json/wp/v2/media/${post.featured_media}`)
+              .then(response => response.json())
+              .then(media => {
+                post.imgSrc = media.source_url; // Add image source URL to post object
+                return post; // Return the updated post object
+              });
           });
-          page++;
+
+          Promise.all(fetches).then(posts => {
+            posts.forEach(post => {
+              const postElement = document.createElement("div");
+              postElement.classList.add("post");
+              addPost(
+                postElement,
+                post.imgSrc, // Use the image source URL from the post object
+                post.title.rendered,
+                post.excerpt.rendered,
+                post.id
+              );
+            });
+            page++;
+          });
         }
       })
       .catch((error) => {
@@ -48,17 +56,18 @@ document.addEventListener("DOMContentLoaded", function () {
   function addPost(postElement, imgSrc, title, excerpt, id) {
     console.log("imgSrc2", imgSrc);
     postElement.innerHTML = `
-            <a href="blog-spesific.html?id=${id}&title=${title}"><h2>${title}</h2></a>
+           
             ${imgSrc ? `<img src="${imgSrc}" alt="Post image">` : ""}
-            <div>${excerpt}</div>
-            
-            
+           <div> <a href="blog-spesific.html?id=${id}&title=${title}"><h2>${title}</h2></a> <div>
+           
+            <div>${excerpt}  </div>
+            <a href="blog-spesific.html?id=${id}"><button>Read more</button></a>
         `;
     postsContainer.appendChild(postElement);
   }
 
   loadMoreButton.addEventListener("click", fetchPosts);
 
-  // Sayfa yüklendiğinde başlangıçta verileri getir
+
   fetchPosts();
 });

@@ -32,7 +32,7 @@
   display: block;
   position: absolute;
   right: 1rem;
-  top: 1rem;
+  top: 0.5rem;
 }
 
 /* Add a grey background color on mouse-over */
@@ -66,7 +66,18 @@
   width: 100%; /* Resmin maksimum genişliği, taşmaması için */
   height: auto; /* Yüksekliği otomatik olarak ayarla */
 }
+@media screen and (max-width:400px) {
+  .topnav .active{
+  
+    font-size: 1.5rem;
+   
+  }
+  .topnav a.icon{
+ top: 0.3rem;
+ right: 0.5rem;
+  }
 
+}
 /*carusel*/
 .latest-posts-carousel {
   max-width: 100%;
@@ -469,6 +480,75 @@ h2 {
   }
 }
 
+/*blog-page*/
+.post {
+  display: flex;
+  flex-direction: column; /* Mobil cihazlarda sütun düzeni */
+  border: 2px solid rgba(0, 0, 0, 0.365);
+  margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.909); /* Kenarlara gölgelik efekt */
+}
+
+.post img {
+  display: flex;
+  width: 100%;
+  margin: 2rem 0; 
+border-radius: 10px;
+}
+
+  
+.post h2{
+  margin-top: 6rem;
+
+}
+.post a{
+  text-decoration: none;
+}
+.post h2:hover{
+  color: red;
+}
+.posts p {
+  text-align: justify;
+  line-height: 41px;
+
+margin-top: 3rem;
+
+}
+.posts button {
+background-color: #14B9D5;
+font-size: 14PX;
+color: #ddd;
+border: none;
+padding: 10px 12px;
+cursor: pointer;
+margin: 5rem ;
+}
+.posts button:hover{
+background-color: #2C4A58;
+}
+@media only screen and (min-width: 600px) {
+  .post {
+    flex-direction: row; /* 600 piksel genişliğinden itibaren tekrar yan yana düzen */
+  }
+
+  .post img {
+    margin: 2rem;
+    max-width: 50%; /* Büyük ekranlarda genişliği yarıya indir */
+  }
+}
+
+@media screen and (max-width:767px){
+  
+ 
+
+
+
+
+
+}
+
+
 
 
 
@@ -503,42 +583,57 @@ h2 {
 }
 
 p {
-  text-align: center;
-  line-height: 21px;
+
+  line-height: 41px;
   font-size: 1rem;
   width: 80%;
   margin: auto;
   text-decoration: none solid rgb(49,49,49);
 }
+.card p:nth-of-type(2),
+.card p:nth-of-type(3) {
+font-weight: bold;
+font-weight: bold;
+}
+
+ 
+  
+
+
 
 .wp-block-image img {
-  display: block;
-  width: 50vw; 
-  height: 70vh;
+  display: flex;
+ max-width: 100%; 
+ height: auto;
   margin: 2rem auto; 
   overflow: hidden;
   transition: transform 0.3s ease;
   border-radius: 5px;
 }
+@media only screen and (max-width: 600px) {
+  .wp-block-image img {
+padding: 20px;
+  }
+  }
 
 
 ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: auto;
+  margin:auto;
+  width: 80%;
+
+
  
 }
 ul li{
   width: 100%;
-
 }
 ol {
   list-style-position: inside; 
   width: 80%;
   margin: auto;
 }
-
 
 
 

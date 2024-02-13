@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listeners for previous and next buttons
     prevButton.addEventListener('click', moveCarouselLeft);
     nextButton.addEventListener('click', moveCarouselRight);
-});
 
     // Form validation
     document.getElementById('contactForm').addEventListener('submit', function(event) {
@@ -95,13 +94,17 @@ document.addEventListener('DOMContentLoaded', function () {
             // Here you can write code to submit the form data using AJAX or any other method
         }
     });
-   /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+});
+
+/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function myFunction() {
     var x = document.getElementById("myLinks");
     if (x.style.display === "block") {
-      x.style.display = "none";
+        x.style.display = "none";
     } else {
-      x.style.display = "block";
+        x.style.display = "block";
     }
-  }
+}
+
+
   
