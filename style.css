@@ -486,6 +486,7 @@ h2 {
   flex-direction: column; /* Mobil cihazlarda sütun düzeni */
   border: 2px solid rgba(0, 0, 0, 0.365);
   margin: 2rem;
+  margin-top: 6rem;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.909); /* Kenarlara gölgelik efekt */
 }
@@ -493,6 +494,7 @@ h2 {
 .post img {
   display: flex;
   width: 100%;
+  height: auto;
   margin: 2rem 0; 
 border-radius: 10px;
 }
@@ -534,13 +536,18 @@ background-color: #2C4A58;
 
   .post img {
     margin: 2rem;
-    max-width: 50%; /* Büyük ekranlarda genişliği yarıya indir */
+    max-width: 80%; /* Büyük ekranlarda genişliği yarıya indir */
   }
 }
 
 @media screen and (max-width:767px){
-  
- 
+  .post{
+    flex-direction: column;
+  }
+  .post img {
+width: 100%;
+
+  }
 
 
 
@@ -609,7 +616,9 @@ font-weight: bold;
   overflow: hidden;
   transition: transform 0.3s ease;
   border-radius: 5px;
+  cursor: pointer;
 }
+
 @media only screen and (max-width: 600px) {
   .wp-block-image img {
 padding: 20px;
