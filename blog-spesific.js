@@ -6,18 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(queryString);
   const title = urlParams.get("title");
   const id = urlParams.get("id");
-  document.title = title;
+  document.title = `My Blog | ${title}`;
 
   async function getDetails() {
     //https://www.akca.no/wp-json/wp/v2/posts/153
     console.log(`${baseUrl}/${id}`);
     const response = await fetch(`${baseUrl}/${id}`);
-    console.log("response", response);
+    // console.log("response", response);
     if (!response.ok) {
       throw new Error("Network response was not ok.");
     }
     const post = await response.json();
-    console.log("post", post);
+    // console.log("post", post);
     createHtmlDetails(post);
   }
 
@@ -30,13 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         <h2>${post.title.rendered}</h2>
                        ${post.content.rendered}
                     </article>
-                  
                 </section>
             `;
-    console.log("postsHtml", postsHtml);
+    // console.log("postsHtml", postsHtml);
     resultsContainer.innerHTML += postsHtml;
   }
 
   getDetails();
 });
-

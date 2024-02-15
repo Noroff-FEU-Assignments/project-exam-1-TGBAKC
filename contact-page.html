@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact-page</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Explora&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Explora&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
     <script src="java.js"></script>
-</head>
-<body>
-<header>
-    <div class="topnav">
-        <a href="index.html" class="active">Tugba Akca Nutrition <span>Healthy life</span></a>
+  </head>
+  <body>
+    <header>
+      <div class="topnav">
+        <a href="index.html" class="active"
+          >Tugba Akca Nutrition <span>Healthy life</span></a
+        >
         <div id="myLinks">
-                
           <a href="index.html">Home</a>
           <a href="blogg.html">Blog</a>
           <a href="contact-page.html">Contact</a>
@@ -24,69 +31,74 @@
           <i class="fa fa-bars"></i>
         </a>
       </div>
-</header>
-    <hr>
-
+    </header>
+    <hr />
 
     <div class="content">
-    <h1 class="contact-title">CONTACT FORM</h1>
-    <p class="contact-p">
-        I would love to hear from you! Please feel free to contact me directly at hello@eatyourselfskinny.com OR fill out the form below should you have any questions, want additional recipes or would like to make a request!  I love hearing from my readers!
-    </p>
-</div>
+      <h1 class="contact-title">CONTACT FORM</h1>
+      <p class="contact-p">
+        I would love to hear from you! Please feel free to contact me directly
+        at hello@eatyourselfskinny.com OR fill out the form below should you
+        have any questions, want additional recipes or would like to make a
+        request! I love hearing from my readers!
+      </p>
+    </div>
     <form id="contactForm">
-  
-        <div>
-<label for="name">Name</label>
-<input type="text" id="name" name="name">
-<span class="error" id="errorName"></span>
-</div>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" />
+        <span class="error" id="errorName"></span>
+      </div>
 
-<div>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email">
-    <span class="error" id="errorEmail"></span>
-</div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" />
+        <span class="error" id="errorEmail"></span>
+      </div>
 
+      <div>
+        <label for="subject">Subject:</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          minlength="15"
+          title="Subject should be more than 15 characters long"
+        />
+        <span class="error" id="errorSubject"></span>
+      </div>
 
-<div>
-    <label for="subject">Subject:</label>
-    <input type="text" id="subject" name="subject" minlength="15" title="Subject should be more than 15 characters long">
-    <span class="error" id="errorSubject"></span>
-</div>
-
-<div>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message"></textarea>
-    <span class="error" id="errorMessage"></span>
-</div>
-<button type="submit">Submit</button>
+      <div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+        <span class="error" id="errorMessage"></span>
+      </div>
+      <button type="submit">Submit</button>
     </form>
 
     <footer class="footer">
       <div class="footer-container">
-          <section class="footer-section about">
-              <h4>About Us</h4>
-              <p>Your source for delicious recipes and culinary inspiration.</p>
-          </section>
-          <div class="footer-section links">
-              <h4>Quick Links</h4>
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blogg.html">Blog</a></li>
-                <li><a href="about-page.html">About</a></li>
-                <li><a href="contact-page.html">Contact</a></li>
-            </ul>
-          </div>
-          <section class="footer-section search">
-              <h4>Recipe Search</h4>
-              <form action="/search" method="GET">
-                  <input type="text" name="q" placeholder="Search for recipes...">
-                  <button type="submit">Search</button>
-              </form>
-          </section>
+        <section class="footer-section about">
+          <h4>About Us</h4>
+          <p>Your source for delicious recipes and culinary inspiration.</p>
+        </section>
+        <div class="footer-section links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blogg.html">Blog</a></li>
+            <li><a href="about-page.html">About</a></li>
+            <li><a href="contact-page.html">Contact</a></li>
+          </ul>
+        </div>
+        <section class="footer-section search">
+          <h4>Recipe Search</h4>
+          <form action="/search" method="GET">
+            <input type="text" name="q" placeholder="Search for recipes..." />
+            <button type="submit">Search</button>
+          </form>
+        </section>
       </div>
     </footer>
-    
-</body>
+  </body>
 </html>
