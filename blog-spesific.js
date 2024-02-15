@@ -62,6 +62,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // getDetails fonksiyonunu çağır
   getDetails();
 });

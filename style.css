@@ -548,7 +548,7 @@ figure{
   position:relative
 }
 .modal-section {
-  display: none; /* Başlangıçta gizli */
+  display: none; 
   position: fixed;
   left: 0;
   top: 0;
