@@ -43,38 +43,47 @@
         request! I love hearing from my readers!
       </p>
     </div>
-    <form id="contactForm">
-      <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" />
-        <span class="error" id="errorName"></span>
-      </div>
-
-      <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" />
-        <span class="error" id="errorEmail"></span>
-      </div>
-
-      <div>
-        <label for="subject">Subject:</label>
-        <input
-          type="text"
-          id="subject"
-          name="subject"
-          minlength="15"
-          title="Subject should be more than 15 characters long"
-        />
-        <span class="error" id="errorSubject"></span>
-      </div>
-
-      <div>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message"></textarea>
-        <span class="error" id="errorMessage"></span>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    <div class="contact-form">
+  
+      <label for="contact-name">
+        Name & Surname <br />
+        <input id="contact-name" name="name&surname" type="text" />
+        <br />
+      </label>
+      <p class="contact-error" id="NameError">
+        Name should be more than 5 characters long
+      </p>
+      <label for="contact-mail">
+        E-post <br />
+        <input id="contact-mail" name="e-mail" type="email" />
+        <br />
+      </label>
+      <p class="contact-error" id="emailError">
+        Must be a valid email adress
+      </p>
+      <label for="contact-subject">
+        Subject <br />
+        <input id="contact-subject" name="subject" type="text" />
+        <br />
+      </label>
+      <p class="contact-error" id="subjectError">
+        Subject should be more than 15 characters long
+      </p>
+      <label for="contact-explanation">
+        Message <br />
+        <textarea
+          name="explanation"
+          id="contact-explanation"
+          cols="30"
+          rows="11"
+        ></textarea>
+      </label>
+      <p class="contact-error" id="messageError">
+        Message has to be more than 25 character
+      </p>
+      <button class="submit">Submit</button>
+    </div>
+  </div>
 
     <footer class="footer">
       <div class="footer-container">
@@ -100,5 +109,6 @@
         </section>
       </div>
     </footer>
+    <script src="contact.js"></script>
   </body>
 </html>
