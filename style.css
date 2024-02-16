@@ -484,13 +484,16 @@ h2 {
 
 .post h2 {
   margin-top: 6rem;
+ 
+
 }
 .post a {
   text-decoration: none;
-  color: black;
+  color: #000;
 }
 .post h2:hover {
   color: red;
+
 }
 .posts p {
   text-align: justify;
@@ -546,9 +549,7 @@ article {
   flex-direction: column;
   line-height: 40px;
 }
-figure {
-  position: relative;
-}
+
 .modal-section {
   display: none;
   position: fixed;
@@ -564,10 +565,6 @@ figure {
   overflow: auto;
 }
 
-.modal-section img {
-  max-width: 100%;
-  max-height: auto;
-}
 .card {
   display: flex;
   flex-direction: column;
