@@ -26,7 +26,7 @@ span {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: chartreuse;
+  color: black;
 }
 
 /* Style the hamburger menu */
@@ -82,8 +82,6 @@ span {
   margin: 0 auto;
   overflow: hidden;
   display: flex;
-  
-  /* justify-content: */
   align-items: center;
 }
 
@@ -485,16 +483,12 @@ h2 {
 
 .post h2 {
   margin-top: 6rem;
- 
-
 }
 .post a {
   text-decoration: none;
-  color: #000;
 }
 .post h2:hover {
   color: red;
-
 }
 .posts p {
   text-align: justify;
@@ -550,7 +544,9 @@ article {
   flex-direction: column;
   line-height: 40px;
 }
-
+figure {
+  position: relative;
+}
 .modal-section {
   display: none;
   position: fixed;
@@ -566,6 +562,10 @@ article {
   overflow: auto;
 }
 
+.modal-section img {
+  max-width: 100%;
+  height: auto;
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -599,7 +599,6 @@ p {
   font-weight: bold;
   font-weight: bold;
 }
-
 .wp-block-image img {
   display: flex;
   max-width: 100%;
@@ -616,6 +615,7 @@ p {
     padding: 20px;
   }
 }
+
 
 ul {
   display: flex;
@@ -650,7 +650,9 @@ ol {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
 }
-
+.about-card img{
+  width: 100%;
+}
 .about-section {
   padding: 50px;
   text-align: center;

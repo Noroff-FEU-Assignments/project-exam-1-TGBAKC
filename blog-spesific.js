@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     resultsContainer.innerHTML += postsHtml;
 
-    // Yeni eklenen içerikteki tüm resimlere erişim
+  
     document.querySelectorAll("#productDetails img").forEach((img) => {
       img.addEventListener("click", biggerImg);
     });
@@ -43,17 +43,17 @@ document.addEventListener("DOMContentLoaded", function () {
     modalSection.style.display = "flex";
     modalSection.innerHTML = `<img src="${postImg.src}" alt="${postImg.alt}" />`;
 
-    // Modal dışına tıklandığında kapat
+   
     document.onclick = function (event) {
       if (event.target === modalSection) {
         modalSection.style.display = "none";
       }
     };
 
-    // Close icon için düzeltme (Eğer fa-xmark class'ına sahip bir element varsa)
+    
     const close = document.querySelector(".fa-xmark");
     if (close) {
-      // Eğer .fa-xmark bulunursa
+  
       close.onclick = function () {
         modalSection.style.display = "none";
       };
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   getDetails();
 });
-
+/*  hamburger menu / bar icon */
 function myFunction() {
   var x = document.getElementById("myLinks");
   if (x.style.display === "block") {
