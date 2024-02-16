@@ -82,7 +82,8 @@ span {
   margin: 0 auto;
   overflow: hidden;
   display: flex;
-  /* justify-content: center; */
+  
+  /* justify-content: */
   align-items: center;
 }
 
