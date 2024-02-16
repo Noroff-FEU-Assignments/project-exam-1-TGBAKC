@@ -4,11 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const loadMoreButton = document.querySelector(".load-more");
   const errorMessage = document.querySelector(".error-message");
 
-  let page = 1; 
-  const postsPerPage = 10; 
+  let page = 1;
+  const postsPerPage = 10;
 
   function fetchPosts() {
-    console.log(`${endpoint}?page=${page}&per_page=${postsPerPage}&_embed`);
     fetch(`${endpoint}?page=${page}&per_page=${postsPerPage}&_embed`)
       .then((response) => {
         if (!response.ok) {
@@ -27,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
             )
               .then((response) => response.json())
               .then((media) => {
-                post.imgSrc = media.source_url; 
-                return post; 
+                post.imgSrc = media.source_url;
+                return post;
               });
           });
 
@@ -38,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
               postElement.classList.add("post");
               addPost(
                 postElement,
-                post.imgSrc, 
+                post.imgSrc,
                 post.title.rendered,
                 post.excerpt.rendered,
                 post.id
@@ -56,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function addPost(postElement, imgSrc, title, excerpt, id) {
-    console.log("imgSrc2", imgSrc);
     postElement.innerHTML = `
            
             ${imgSrc ? `<img src="${imgSrc}" alt="Post image">` : ""}

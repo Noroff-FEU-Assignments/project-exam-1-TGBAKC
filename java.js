@@ -50,8 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((posts) => {
         const post = posts.find((post) => post.featured_media === imageUrl);
-
-        console.log("Post Data:", post);
       })
       .catch((error) => {
         console.error("Error fetching post data:", error);

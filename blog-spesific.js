@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.title = `My Blog | ${title}`;
 
   async function getDetails() {
-    //https://www.akca.no/wp-json/wp/v2/posts/153
-    console.log(`${baseUrl}/${id}`);
     const response = await fetch(`${baseUrl}/${id}`);
     if (!response.ok) {
       throw new Error("Network response was not ok.");
@@ -20,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function createHtmlDetails(post) {
-    console.log("posts2", post);
     let postsHtml = `
                 <section class="card">
                     <article>
@@ -33,13 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
     resultsContainer.innerHTML += postsHtml;
 
     // Yeni eklenen içerikteki tüm resimlere erişim
-    document.querySelectorAll("#productDetails img").forEach(img => {
+    document.querySelectorAll("#productDetails img").forEach((img) => {
       img.addEventListener("click", biggerImg);
     });
   }
 
   function biggerImg() {
-    let postImg = this;  
+    let postImg = this;
 
     const modalSection = document.querySelector(".modal-section");
 
@@ -55,12 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Close icon için düzeltme (Eğer fa-xmark class'ına sahip bir element varsa)
     const close = document.querySelector(".fa-xmark");
-    if (close) { // Eğer .fa-xmark bulunursa
-      close.onclick = function() { modalSection.style.display = "none"; };
+    if (close) {
+      // Eğer .fa-xmark bulunursa
+      close.onclick = function () {
+        modalSection.style.display = "none";
+      };
     } else {
       console.warn("'.fa-xmark' bulunamadı.");
     }
-  };
+  }
 
   getDetails();
 });
