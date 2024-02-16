@@ -22,6 +22,12 @@
   font-size: 17px;
   display: block;
 }
+span {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: chartreuse;
+}
 
 /* Style the hamburger menu */
 .topnav a.icon {
@@ -481,6 +487,7 @@ h2 {
 }
 .post a {
   text-decoration: none;
+  color: black;
 }
 .post h2:hover {
   color: red;
