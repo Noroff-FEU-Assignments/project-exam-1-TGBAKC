@@ -493,8 +493,8 @@ h2 {
 .posts p {
   text-align: justify;
   line-height: 41px;
-
   margin-top: 3rem;
+  color: #000;
 }
 .posts button {
   background-color: #14b9d5;
