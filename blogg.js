@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const loadMoreButton = document.querySelector(".load-more");
   const errorMessage = document.querySelector(".error-message");
 
-  let page = 1; // Her sayfa için varsayılan sayfa numarası
-  const postsPerPage = 10; // Her sayfada gösterilecek post sayısı
+  let page = 1; 
+  const postsPerPage = 10; 
 
   function fetchPosts() {
     console.log(`${endpoint}?page=${page}&per_page=${postsPerPage}&_embed`);
@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
             )
               .then((response) => response.json())
               .then((media) => {
-                post.imgSrc = media.source_url; // Add image source URL to post object
-                return post; // Return the updated post object
+                post.imgSrc = media.source_url; 
+                return post; 
               });
           });
 
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
               postElement.classList.add("post");
               addPost(
                 postElement,
-                post.imgSrc, // Use the image source URL from the post object
+                post.imgSrc, 
                 post.title.rendered,
                 post.excerpt.rendered,
                 post.id

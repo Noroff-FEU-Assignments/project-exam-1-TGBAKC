@@ -10,7 +10,7 @@
   position: relative;
 }
 
-/* Hide the links inside the navigation menu (except for logo/home) */
+
 .topnav #myLinks {
   display: none;
 }
@@ -23,6 +23,13 @@
   font-size: 17px;
   display: block;
 }
+span{ 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: chartreuse;
+}
+
 
 /* Style the hamburger menu */
 .topnav a.icon {
@@ -33,7 +40,7 @@
   top: 0.5rem;
 }
 
-/* Add a grey background color on mouse-over */
+
 .topnav a:hover {
   background-color: #ddd;
   color: black;
@@ -56,12 +63,12 @@
 
 .main-menu {
   display: flex;
-  justify-content: center; /* Resmi merkezlemek için */
+  justify-content: center; 
 }
 
 .main-menu img {
-  width: 100%; /* Resmin maksimum genişliği, taşmaması için */
-  height: auto; /* Yüksekliği otomatik olarak ayarla */
+  width: 100%; 
+  height: auto; 
 }
 @media screen and (max-width: 400px) {
   .topnav .active {
@@ -149,54 +156,42 @@ cursor: pointer;
 
 @media screen and (max-width: 767px) {
   .carousel-container {
-    /* Since we want only one slide visible at a time, set the width to 100% */
     width: 100%;
-    /* Adjust the flex property so that it doesn't allow the slides to shrink */
     flex: 0 0 100%;
-    /* Ensure the container doesn't allow wrapping of items */
     flex-wrap: nowrap;
     gap: 10px;
     padding: 10px;
   }
 
   .carousel-slide {
-    /* Each slide should take up the full width of the carousel-container */
     flex: 0 0 50%;
-    /* Adjust margin to ensure the slide is centered */
     margin: auto;
-    /* Ensure content within each slide is centered, especially if you change the flex-direction */
     justify-content: center;
     align-items: center;
   }
 
   .carousel-slide img {
-    /* Adjust the image size to fit within the slide, you may want to set a max-width here */
-    width: auto; /* Adjust this based on your design needs */
-    max-width: 100%; /* Ensure the image does not overflow its container */
-    height: auto; /* Maintain aspect ratio */
+    width: auto; 
+    max-width: 100%; 
+    height: auto; 
   }
 
   .prev-slide,
   .next-slide {
-    /* Adjust the navigation buttons as needed for smaller screens */
-    font-size: 0.8rem; /* Example adjustment */
+    font-size: 0.8rem; 
   }
 
   /* Additional adjustments for heading and text on image */
   .carousel__heading,
   .text-on-image {
-    /* Adjust font size and padding as needed */
-    font-size: smaller; /* Example adjustment */
+    font-size: smaller; 
   }
 }
 
 @media screen and (max-width: 400px) {
   .carousel-slide {
-    /* Each slide should take up the full width of the carousel-container */
     flex: 0 0 100%;
-    /* Adjust margin to ensure the slide is centered */
     margin: auto;
-    /* Ensure content within each slide is centered, especially if you change the flex-direction */
     justify-content: center;
     align-items: center;
   }
@@ -216,16 +211,16 @@ cursor: pointer;
 
 .box-container {
   display: flex;
-  flex-wrap: wrap; /* Kutuların yan yana sıralanması */
-  justify-content: center; /* Kutuları merkezlemek için */
+  flex-wrap: wrap; 
+  justify-content: center; 
   margin-top: 20px;
 }
 
 .box1 {
   margin: 10px;
-  min-width: 200px; /* Kutunun minimum genişliği */
+  min-width: 200px; 
   flex: 1;
-  text-align: center; /* İçerik merkezlemek için */
+  text-align: center; 
 }
 
 .box1 img {
@@ -244,7 +239,7 @@ cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: underline;
   cursor: pointer;
-  margin: 2rem auto; /* İçerik merkezlemek için */
+  margin: 2rem auto; 
 }
 
 .box1 span:hover {
@@ -302,7 +297,7 @@ a.little-info {
   }
 }
 
-/* Original CSS for the footer */
+/* CSS for the footer */
 .footer {
   background-color: #f9d8cb;
   color: #fff;
@@ -354,7 +349,7 @@ a.little-info {
   font-size: 12px;
 }
 
-/* Corrected Responsive adjustments using media query */
+/*  media query */
 @media screen and (max-width: 767px) {
   .footer-container {
     flex-direction: column;
@@ -474,12 +469,12 @@ h2 {
 /*blog-page*/
 .post {
   display: flex;
-  flex-direction: column; /* Mobil cihazlarda sütun düzeni */
+  flex-direction: column; 
   border: 2px solid rgba(0, 0, 0, 0.365);
   margin: 2rem;
   margin-top: 6rem;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.909); /* Kenarlara gölgelik efekt */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.909); 
 }
 
 .post img {
@@ -519,12 +514,12 @@ h2 {
 }
 @media only screen and (min-width: 600px) {
   .post {
-    flex-direction: row; /* 600 piksel genişliğinden itibaren tekrar yan yana düzen */
+    flex-direction: row; 
   }
 
   .post img {
     margin: 2rem;
-    max-width: 80%; /* Büyük ekranlarda genişliği yarıya indir */
+    max-width: 80%; 
   }
 }
 
@@ -534,9 +529,19 @@ h2 {
   }
   .post img {
     width: 100%;
+    padding: 10px;
   }
 }
-
+@media screen  and (max-width: 400px){
+  .post h2{
+    font-size: 1rem;
+  }
+  .post img{
+    max-width: 100%;
+    padding: 10px;
+  }
+ 
+}
 /* blog-spesific-page loading */
 
 article {
@@ -548,32 +553,32 @@ figure{
   position:relative
 }
 .modal-section {
-  display: none; /* Başlangıçta gizli */
+  display: none; 
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%; /* Yüksekliği %100'e ayarla */
-  background-color: rgba(0, 0, 0, 0.5); /* Yarı şeffaf arka plan */
-  z-index: 1000; /* En üstte olmasını sağla */
-  display: flex; /* Flexbox kullan */
-  justify-content: center; /* İçeriği yatay olarak ortala */
-  align-items: center; /* İçeriği dikey olarak ortala */
-  overflow: auto; /* Gerekiyorsa kaydırmayı etkinleştir */
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1000; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  overflow: auto; 
 }
 
 .modal-section img {
-  max-width: 100%; /* Ekranın %90'ını kaplayacak şekilde genişlik sınırlaması */
-  max-height: auto; /* Ekranın %90'ini kaplayacak şekilde yükseklik sınırlaması */
+  max-width: 100%; 
+  max-height: auto; 
 }
 .card {
   display: flex;
-  flex-direction: column; /* İçerikleri dikey eksende sırala */
+  flex-direction: column; 
   border-radius: 10px;
-  margin: 1rem auto; /* Sayfanın ortasında olacak şekilde ayarla */
+  margin: 1rem auto; 
   box-shadow: 2px 2px 2px 1px rgb(0, 0, 0);
-  width: 60%; /* Card genişliğini ayarla */
-  max-width: 800px; /* Maksimum genişlik sınırı */
+  width: 60%; 
+  max-width: 800px; 
 }
 
 .wp-block-heading {
@@ -660,6 +665,9 @@ ol {
 .about-section h1 {
   color: #333;
 }
+.about-section p{
+  color: #000;
+}
 .container {
   padding: 0 16px;
   display: flex;
@@ -694,6 +702,6 @@ ol {
     flex-wrap: wrap;
   }
   .column {
-    max-width: 100%; /* Küçük ekranlarda sütunlar tam genişliğe ayarlanır */
+    max-width: 100%; 
   }
 }
