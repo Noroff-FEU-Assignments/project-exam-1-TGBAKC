@@ -91,7 +91,7 @@
 
 .carousel-slide {
   display: flex;
-
+cursor: pointer;
   margin: 1rem;
   justify-content: center;
   align-items: center;
@@ -396,103 +396,78 @@ a.little-info {
   color: #58595b;
   font-size: 0.9rem;
   line-height: 1.5rem;
+  margin: 10px;
   text-transform: lowercase;
-  display: flex;
-  flex-direction: column; /* Display content in a column */
-  justify-content: start;
+  width: 690px;
   text-align: center;
 }
+
 h2 {
   color: #333;
 }
-.contact-form {
-  background: rgba(0,0,0,.75);
-  margin: auto;
-  margin-bottom: 10px;
-  width:40%; /* Adjusted width for responsiveness */
+
+#contactForm {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
- padding: 20px;
- border-radius: 5px;
+  text-transform: uppercase;
+  color: #f49782;
+  background: white;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#contact-subject, #contact-name, #contact-mail {
-  width: 100%; 
-  height: auto;
-  margin-bottom:10px;
-  padding: 16px 50px;
-  box-sizing: border-box; 
-
+#contactForm div {
+  margin-bottom: 15px;
 }
 
-#contact-explanation {
-  width: 100%; 
-height: auto;
-  margin-bottom: 10px;
-  padding: 16px 20px;
-  box-sizing: border-box; 
+#contactForm label {
+  display: block;
+  margin-bottom: 5px;
 }
 
-
-.contact-form h4 {
-  margin: 0; /* Reset margin */
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-.contact-defn {
-  margin-top: 0;
+#contactForm textarea {
+  height: 100px;
 }
 
-.submit {
-  display: flex;
-  background-color: #E50914;
-  font-size: 16px; 
-  padding: 16px 50px;
-  border-radius: 2px;
+#contactForm button {
+  background-color: #f49782;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  color: white;
-  border-radius: 5px;
-
+  font-size: 1rem;
 }
 
-.contact-error {
-  display: none;
+#contactForm button:hover {
+  background-color: #004494;
+}
+
+.error {
   color: red;
-  text-align: center;
-  margin-top: 5px; /* Adjusted margin */
-}
-label{
-  color: white;
-
-}
-@media all and (max-width: 768px) {
-  .contact-form {
-    padding: 10px; 
-    width: 70%;
-   
-  }
-
-  #contact-subject, #contact-name, #contact-mail, #contact-explanation {
-    font-size: 14px; /* Adjusted font size */
-  }
-
-  .submit {
-    font-size: 14px; /* Adjusted font size */
-  
-  }
+  font-size: 0.875rem;
 }
 
-@media all and (max-width: 480px) {
-  .submit {
-    font-size: 10px;
- 
-  display: flex;
- 
+@media screen and (max-width: 767px) {
+  .contact-p {
+    width: 90%;
+    max-width: none;
   }
 
-  .contact-error {
-    font-size: 12px;
+  #contactForm {
+    max-width: 90%;
   }
 }
 
@@ -573,7 +548,7 @@ figure{
   position:relative
 }
 .modal-section {
-  display: none; 
+  display: none; /* Başlangıçta gizli */
   position: fixed;
   left: 0;
   top: 0;
@@ -591,9 +566,6 @@ figure{
   max-width: 100%; /* Ekranın %90'ını kaplayacak şekilde genişlik sınırlaması */
   max-height: auto; /* Ekranın %90'ini kaplayacak şekilde yükseklik sınırlaması */
 }
-
-
-
 .card {
   display: flex;
   flex-direction: column; /* İçerikleri dikey eksende sırala */

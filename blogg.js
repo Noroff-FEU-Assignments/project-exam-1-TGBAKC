@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     postElement.innerHTML = `
            
             ${imgSrc ? `<img src="${imgSrc}" alt="Post image">` : ""}
-           <div><h2>${title}</h2><div>
+           <div><a href="blog-spesific.html?id=${id}"><h2>${title}</h2><div>
            
             <div>${excerpt}  </div>
             <a href="blog-spesific.html?id=${id}&title=${title}"><button>Read more</button></a>
