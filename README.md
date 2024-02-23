@@ -1,17 +1,22 @@
 **Squereeyes**
 ![alt text](image.png)
 
-*Square Eyes is a cross course project that I made during my first year at Noroff. It's a fictional website for movie directors and watchers, showing the account for movie watchers only. There are still several changes and improvements needed, as it's mostly built using HTML and CSS with some JavaScript.*
+*In my first year of web development studies, I embarked on creating a blog site that blends HTML, CSS, and JavaScript with a WordPress backend as a Headless CMS. This project allowed me to focus on front-end design and user interaction, featuring responsive design, dynamic content loading, and API integration. It was a practical exercise in applying my learning to develop a user-friendly, content-rich website, marking a key milestone in my web development journey.*
 
 
 **DESCRIPTION**
-Welcome to our video streaming platform, where film enthusiasts can directly buy and enjoy high-quality movies from the creators themselves. Aimed at movie lovers aged 25 to 40, our site makes it easy to find and explore a wide range of films across various genres.
+In the initial year of my web development journey, I embarked on an ambitious project to craft a blog site that epitomizes the culmination of my learning. This wasn't just any blog site; it was a fusion of modern web technologies, including HTML, CSS, and JavaScript, intricately integrated with a WordPress setup configured as a Headless CMS. This innovative approach allowed me to delve deep into the frontend, creating a site that's not only visually appealing but also rich in functionality, while relegating content management to WordPress's capable hands.
 
-Our slogan, "Connecting Film-Lovers," captures our mission to bring together a community of viewers and filmmakers. Here, you can quickly purchase and stream your next favorite film, supporting the creators directly.
+Key Project Features:
+Dynamic Interaction: Utilizing JavaScript, I introduced interactive elements like a carousel slider for showcasing the latest posts, significantly enhancing the site's navigability and user engagement.
+Responsive Design: I ensured the site's design was fluid across various devices, offering a seamless experience to users regardless of their browsing device.
+API Integration: The integration with the WordPress REST API was pivotal, allowing for the dynamic population of blog content and showcasing my adeptness at API utilization.
+User Input Validation: I implemented JavaScript validations for the contact page forms, prioritizing a user-friendly experience by guiding users through correct data submission.
+Development Highlights:
+The development process was a harmonious blend of design and technical prowess, marked by the implementation of features like dynamically generated content for blog-specific pages based on user interaction. This not only demonstrated my capability to create responsive web pages but also enhanced user engagement through personalized content.
 
-Our user-friendly website highlights the latest and most popular films, offering personalized suggestions to help you discover new cinematic treasures. Whether you're after an indie film, a touching documentary, or a critically acclaimed hit, we're your one-stop-shop for great cinema.
-
-Join us on a journey through captivating stories and unique visions from around the world, all from the comfort of your home.
+Conclusion:
+This project was a cornerstone of my first-year learning in web development, amalgamating design sensibilities with technical skills to bring to life a fully functional and aesthetically pleasing blog site. It served as a profound exploration into the realms of creative and technical web development, setting a solid foundation for my future endeavors in the field.
 
 Site architecture:
 ___
@@ -44,7 +49,7 @@ ___
 
 1.Clone the repo:
 ```bash
- git clone git@github.com:TGBAKC/SQUAREYES.git
+ git clone git@github.com:Noroff-FEU-Assignments/project-exam-1-TGBAKC.git
 ```
 2.Install the depencies:
 ```bash
