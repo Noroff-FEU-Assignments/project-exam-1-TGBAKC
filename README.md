@@ -1,5 +1,5 @@
-**Squereeyes**
-![alt text](image.png)
+**Project exam**
+![alt text](<Screenshot 2024-02-25 185934.png>)
 
 *In my first year of web development studies, I embarked on creating a blog site that blends HTML, CSS, and JavaScript with a WordPress backend as a Headless CMS. This project allowed me to focus on front-end design and user interaction, featuring responsive design, dynamic content loading, and API integration. It was a practical exercise in applying my learning to develop a user-friendly, content-rich website, marking a key milestone in my web development journey.*
 
@@ -68,3 +68,4 @@ npm run start
 If you would like to contribute to my project - Just make a pull request and push your changes.
 
 **Contact**
+filizakca4@gmail.com
